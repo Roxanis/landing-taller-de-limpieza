@@ -97,6 +97,7 @@ img {
 .brand-logo {
   display: inline-flex;
   align-items: center;
+  margin-left: 6px;
 }
 
 .brand-logo img {
@@ -117,7 +118,7 @@ img {
 }
 
 .section {
-  padding: 7rem 0;
+  padding: 6rem 0;
 }
 
 .section-soft {
@@ -140,11 +141,11 @@ img {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3.5rem;
-  align-items: center;
-  min-height: calc(100vh - 8rem);
-  padding-top: 3rem;
+  grid-template-columns: minmax(0, 1.06fr) minmax(400px, 0.94fr);
+  gap: clamp(2rem, 3vw, 3.4rem);
+  align-items: start;
+  min-height: calc(100vh - 6.5rem);
+  padding-top: 2.5rem;
 }
 
 .hero-orbit {
@@ -170,8 +171,7 @@ img {
   animation-delay: -4s;
 }
 
-.eyebrow,
-.card-kicker {
+.eyebrow {
   margin: 0 0 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -189,17 +189,18 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.5rem, 7vw, 6rem);
-  max-width: 9.5ch;
+  font-size: clamp(2.7rem, 4.25vw, 4.1rem);
+  max-width: 13ch;
+  line-height: 0.98;
 }
 
 h2 {
-  font-size: clamp(2.6rem, 5vw, 4.15rem);
-  max-width: 14ch;
+  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+  max-width: 16ch;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 p,
@@ -209,15 +210,19 @@ summary {
 }
 
 .lead {
-  max-width: 60ch;
-  font-size: 1.12rem;
+  max-width: 44ch;
+  font-size: 1.125rem;
   color: var(--muted);
-  margin-top: 1.5rem;
+  margin-top: 0.9rem;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  padding-top: 0.15rem;
 }
 
 .hero-copy,
 .hero-visual,
-.hero-card,
 .detail-copy,
 .detail-panel,
 .facilitator-card,
@@ -229,7 +234,11 @@ summary {
 
 .hero-visual {
   display: grid;
-  gap: 1.35rem;
+  gap: 0;
+  align-content: start;
+  justify-self: end;
+  width: min(100%, 44rem);
+  margin-right: 0;
 }
 
 .hero-actions,
@@ -237,7 +246,7 @@ summary {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2.2rem;
+  margin-top: 1.6rem;
 }
 
 .button {
@@ -278,21 +287,23 @@ summary {
 .check-list {
   list-style: none;
   padding: 0;
-  margin: 2rem 0 0;
+  margin: 1.5rem 0 0;
 }
 
 .hero-highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.65rem;
 }
 
 .hero-highlights li {
-  padding: 0.82rem 1.08rem;
-  background: rgba(255, 250, 243, 0.72);
+  padding: 10px 16px;
+  background: rgba(255, 250, 243, 0.54);
   border-radius: 999px;
-  border: 1px solid rgba(93, 116, 98, 0.1);
+  border: 1px solid rgba(93, 116, 98, 0.08);
   color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.25;
 }
 
 .check-list {
@@ -318,7 +329,6 @@ summary {
   box-shadow: 0 0 0 6px rgba(186, 154, 91, 0.08);
 }
 
-.hero-card,
 .detail-panel,
 .facilitator-card,
 .faq-list details,
@@ -341,11 +351,11 @@ summary {
 }
 
 .hero-image-card {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1.02;
 }
 
 .hero-image-card-wide {
-  min-height: 360px;
+  min-height: 540px;
 }
 
 .hero-image-card img,
@@ -357,53 +367,9 @@ summary {
   object-fit: cover;
 }
 
-.hero-card {
-  position: relative;
-  padding: 2.35rem;
-  border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(255, 251, 244, 0.94), rgba(246, 239, 226, 0.76)),
-    radial-gradient(circle at top right, rgba(186, 154, 91, 0.1), transparent 28%);
-}
-
-.hero-card::after {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
-  pointer-events: none;
-}
-
-.hero-card-top {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.symbol {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(186, 154, 91, 0.26), rgba(164, 184, 165, 0.3));
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.symbol-moon::after {
-  content: "";
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  top: 0.9rem;
-  left: 1.05rem;
-  border-radius: 50%;
-  box-shadow: -0.55rem 0 0 0 #fff7e8;
-}
-
 .section-heading {
   max-width: 64rem;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2.2rem;
 }
 
 .section-heading.narrow {
@@ -412,7 +378,6 @@ summary {
 
 .two-column,
 .detail-layout,
-.image-band,
 .facilitators-grid {
   display: grid;
   gap: 2rem;
@@ -424,7 +389,7 @@ summary {
 }
 
 .spacious-grid {
-  gap: 2.8rem;
+  gap: 2.2rem;
   align-items: start;
 }
 
@@ -433,36 +398,15 @@ summary {
 }
 
 .spacious-list {
-  gap: 1.3rem;
-}
-
-.image-band {
-  grid-template-columns: 0.8fr 0.8fr 1fr;
-  align-items: stretch;
-}
-
-.ritual-shot {
-  min-height: 340px;
-}
-
-.ritual-shot.tall {
-  min-height: 420px;
-}
-
-.ritual-copy {
-  border-radius: var(--radius);
-  padding: 2.3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 1rem;
 }
 
 .workshop-layout {
-  gap: 3rem;
+  gap: 2.4rem;
 }
 
 .detail-copy {
-  padding-right: 1rem;
+  padding-right: 0.25rem;
 }
 
 .detail-copy p + p {
@@ -470,7 +414,7 @@ summary {
 }
 
 .detail-panel {
-  padding: 1.8rem;
+  padding: 2rem 2rem 1.85rem;
   border-radius: var(--radius);
 }
 
@@ -504,6 +448,10 @@ summary {
 
 .facilitator-copy {
   padding: 1.9rem;
+}
+
+.facilitator-card h3 {
+  max-width: 16ch;
 }
 
 .facilitator-copy p {
@@ -559,7 +507,7 @@ summary {
 
 .final-cta {
   border-radius: var(--radius);
-  padding: 3.2rem 2rem;
+  padding: 3rem 2rem 2.6rem;
   text-align: center;
 }
 
@@ -570,6 +518,49 @@ summary {
 .cta-note {
   margin-top: 1.2rem;
   color: var(--muted);
+}
+
+.pricing-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pricing-card {
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  background: linear-gradient(180deg, rgba(255, 251, 246, 0.92), rgba(248, 241, 230, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: var(--shadow);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.price-pill {
+  padding: 1.3rem 1.2rem;
+  border-radius: 24px;
+  background: rgba(255, 250, 243, 0.88);
+  border: 1px solid rgba(93, 116, 98, 0.12);
+  text-align: center;
+}
+
+.price-pill span {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--sage-deep);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.price-pill strong {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 600;
+  color: var(--forest);
 }
 
 @keyframes rise {
@@ -596,30 +587,93 @@ summary {
 }
 
 @media (max-width: 980px) {
+  .page-shell {
+    width: min(100vw - 1.5rem, 100%);
+  }
+
   .site-header {
     border-radius: 32px;
-    padding: 1rem;
+    padding: 1rem 1.1rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 0.85rem;
   }
 
   .site-nav {
     order: 3;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    gap: 1rem 1.25rem;
+    padding-top: 0.15rem;
+    font-size: 0.94rem;
+  }
+
+  .button-small {
+    min-height: 40px;
   }
 
   .hero,
   .two-column,
   .detail-layout,
-  .image-band,
-  .facilitators-grid {
+  .facilitators-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
 
   .hero {
     min-height: auto;
-    gap: 2.4rem;
+    gap: 2rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-copy {
+    order: 2;
+  }
+
+  .hero-visual {
+    order: 1;
+    width: 100%;
+    margin-right: 0;
+    justify-self: stretch;
+  }
+
+  .hero-image-card-wide {
+    min-height: 360px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-highlights {
+    gap: 0.7rem;
+  }
+
+  .hero-highlights li {
+    font-size: 0.95rem;
+  }
+
+  .section-heading,
+  .section-heading.narrow {
+    max-width: 100%;
+  }
+
+  .spacious-grid,
+  .workshop-layout {
+    gap: 1.75rem;
+  }
+
+  .detail-panel {
+    max-width: 100%;
+  }
+
+  .facilitators-grid {
+    gap: 1.35rem;
+  }
+
+  .pricing-grid {
+    gap: 0.85rem;
   }
 
   .detail-copy {
@@ -634,48 +688,256 @@ summary {
 
   .site-header {
     position: static;
+    padding: 0.95rem;
+    border-radius: 28px;
+    gap: 0.75rem;
   }
 
   .brand-logo img {
-    height: 34px;
+    height: 31px;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    gap: 0.55rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 0.25rem 0 0.1rem;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 250, 243, 0.7);
+    border: 1px solid rgba(93, 116, 98, 0.1);
+    font-size: 0.9rem;
+  }
+
+  .button-small {
+    width: 100%;
   }
 
   .section {
-    padding: 4.8rem 0;
+    padding: 4rem 0;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2.35rem, 10vw, 3rem);
+    max-width: 12ch;
+    line-height: 0.98;
   }
 
   h2 {
-    font-size: 2.45rem;
+    font-size: clamp(1.95rem, 8vw, 2.45rem);
+    max-width: 14ch;
+    line-height: 1.02;
+  }
+
+  h3 {
+    font-size: 1.45rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.8rem;
+  }
+
+  p,
+  li,
+  summary {
+    font-size: 0.98rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .hero {
+    gap: 1.3rem;
+    padding-top: 1rem;
+  }
+
+  .hero-copy,
+  .hero-visual {
+    gap: 0.9rem;
+  }
+
+  .hero-image-card-wide {
+    min-height: 240px;
+    aspect-ratio: 16 / 11;
+  }
+
+  .hero-highlights {
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .hero-highlights li {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.86rem;
   }
 
   .hero-actions,
   .cta-actions {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .button,
   .button-outline {
     width: 100%;
+    min-height: 52px;
   }
 
-  .hero-card,
+  .section-soft::before {
+    inset: 0.6rem -0.2rem;
+    border-radius: 28px;
+  }
+
+  .section-heading {
+    margin-bottom: 1.55rem;
+  }
+
+  .two-column,
+  .detail-layout,
+  .facilitators-grid,
+  .pricing-grid {
+    gap: 1.2rem;
+  }
+
+  .text-block p + p,
+  .detail-copy p + p {
+    margin-top: 1rem;
+  }
+
+  .spacious-list,
+  .check-list {
+    gap: 0.85rem;
+  }
+
+  .check-list li {
+    padding-left: 1.7rem;
+  }
+
   .detail-panel,
-  .ritual-copy,
   .facilitator-copy,
   .faq-list details,
-  .final-cta {
-    padding: 1.4rem;
-  }
-
-  .hero-highlights {
-    flex-direction: column;
+  .final-cta,
+  .pricing-card {
+    padding: 1.25rem;
   }
 
   .hero-orbit {
     display: none;
+  }
+
+  .detail-panel {
+    padding: 1.35rem 1.2rem 1.25rem;
+  }
+
+  .panel-block + .panel-block {
+    margin-top: 1.25rem;
+  }
+
+  .panel-note {
+    padding: 1rem;
+  }
+
+  .facilitator-card {
+    border-radius: 26px;
+  }
+
+  .facilitator-photo {
+    aspect-ratio: 4 / 4;
+  }
+
+  .facilitator-copy {
+    padding: 1.15rem 1.1rem 1.25rem;
+  }
+
+  .faq-list {
+    gap: 0.9rem;
+  }
+
+  .faq-list details {
+    padding: 1.15rem 1.1rem;
+    border-radius: 22px;
+  }
+
+  .faq-list summary {
+    padding-right: 1.6rem;
+  }
+
+  .pricing-section {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .pricing-card {
+    padding: 1.45rem 1.15rem;
+  }
+
+  .pricing-grid {
+    gap: 0.7rem;
+  }
+
+  .price-pill {
+    padding: 1rem 0.9rem;
+    border-radius: 20px;
+  }
+
+  .price-pill strong {
+    font-size: 1.45rem;
+  }
+
+  .final-cta {
+    padding: 2rem 1.2rem 1.8rem;
+  }
+
+  .cta-note {
+    margin-top: 1rem;
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-shell {
+    width: min(100vw - 0.75rem, 100%);
+  }
+
+  .site-header {
+    padding: 0.85rem;
+  }
+
+  h1 {
+    font-size: 2.15rem;
+    max-width: 12ch;
+  }
+
+  h2 {
+    font-size: 1.82rem;
+  }
+
+  .hero-image-card-wide {
+    min-height: 200px;
+  }
+
+  .hero-card,
+  .detail-panel,
+  .faq-list details,
+  .pricing-card,
+  .final-cta {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
