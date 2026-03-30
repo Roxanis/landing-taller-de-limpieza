@@ -77,6 +77,11 @@ img {
   position: relative;
 }
 
+main {
+  display: grid;
+  gap: 1.35rem;
+}
+
 .site-header {
   position: sticky;
   top: 1rem;
@@ -94,6 +99,15 @@ img {
   box-shadow: var(--shadow-soft);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .brand-logo {
   display: inline-flex;
   align-items: center;
@@ -108,9 +122,10 @@ img {
 
 .site-nav {
   display: flex;
-  gap: 1.6rem;
+  gap: 32px;
   color: var(--muted);
   font-size: 0.98rem;
+  min-width: 0;
 }
 
 .site-nav a:hover {
@@ -122,20 +137,14 @@ img {
 }
 
 .section-soft {
-  position: relative;
-}
-
-.section-soft::before {
-  content: "";
-  position: absolute;
-  inset: 1.5rem -1rem;
+  padding: clamp(3.4rem, 60px, 4.9rem) clamp(1.4rem, 3.1vw, 2.5rem);
   border-radius: 40px;
   background:
     linear-gradient(180deg, rgba(255, 250, 243, 0.82), rgba(249, 242, 231, 0.58)),
     radial-gradient(circle at top right, rgba(186, 154, 91, 0.08), transparent 28%);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: var(--shadow-soft);
-  z-index: -1;
+  backdrop-filter: blur(14px);
 }
 
 .hero {
@@ -145,7 +154,7 @@ img {
   gap: clamp(2rem, 3vw, 3.4rem);
   align-items: start;
   min-height: calc(100vh - 6.5rem);
-  padding-top: 2.5rem;
+  padding-top: 52px;
 }
 
 .hero-orbit {
@@ -196,7 +205,6 @@ h1 {
 
 h2 {
   font-size: clamp(2.2rem, 4.2vw, 3.5rem);
-  max-width: 16ch;
 }
 
 h3 {
@@ -298,7 +306,7 @@ summary {
 
 .hero-highlights li {
   padding: 10px 16px;
-  background: rgba(255, 250, 243, 0.54);
+  background: rgba(255, 250, 243, 0.5);
   border-radius: 999px;
   border: 1px solid rgba(93, 116, 98, 0.08);
   color: var(--muted);
@@ -450,10 +458,6 @@ summary {
   padding: 1.9rem;
 }
 
-.facilitator-card h3 {
-  max-width: 16ch;
-}
-
 .facilitator-copy p {
   color: var(--muted);
 }
@@ -599,13 +603,21 @@ summary {
     gap: 0.85rem;
   }
 
-  .site-nav {
+  .header-actions {
     order: 3;
-    flex-wrap: wrap;
-    justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.85rem;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: auto;
+    flex: 1 1 30rem;
     gap: 1rem 1.25rem;
-    padding-top: 0.15rem;
+    padding-top: 0;
     font-size: 0.94rem;
   }
 
@@ -664,6 +676,11 @@ summary {
     gap: 1.75rem;
   }
 
+  .section-soft {
+    padding: 3rem 1.6rem;
+    border-radius: 34px;
+  }
+
   .detail-panel {
     max-width: 100%;
   }
@@ -693,6 +710,12 @@ summary {
     gap: 0.75rem;
   }
 
+  .header-actions {
+    width: 100%;
+    align-items: stretch;
+    gap: 0.7rem;
+  }
+
   .brand-logo img {
     height: 31px;
   }
@@ -704,6 +727,8 @@ summary {
     flex-wrap: nowrap;
     white-space: nowrap;
     padding: 0.25rem 0 0.1rem;
+    width: 100%;
+    flex: 1 1 100%;
     scrollbar-width: none;
   }
 
@@ -721,10 +746,15 @@ summary {
 
   .button-small {
     width: 100%;
+    flex: 1 1 100%;
   }
 
   .section {
     padding: 4rem 0;
+  }
+
+  main {
+    gap: 1rem;
   }
 
   h1 {
@@ -799,8 +829,8 @@ summary {
     min-height: 52px;
   }
 
-  .section-soft::before {
-    inset: 0.6rem -0.2rem;
+  .section-soft {
+    padding: 1.85rem 1.1rem;
     border-radius: 28px;
   }
 
@@ -932,7 +962,6 @@ summary {
     min-height: 200px;
   }
 
-  .hero-card,
   .detail-panel,
   .faq-list details,
   .pricing-card,
