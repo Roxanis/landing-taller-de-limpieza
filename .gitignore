@@ -1,0 +1,4 @@
+.agents/
+node-v22.14.0-darwin-arm64/
+node-v22.14.0-darwin-arm64.tar.gz
+skills-lock.json
