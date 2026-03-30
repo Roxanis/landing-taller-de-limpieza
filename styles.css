@@ -535,6 +535,9 @@ summary {
   background: linear-gradient(180deg, rgba(255, 251, 246, 0.92), rgba(248, 241, 230, 0.78));
   border: 1px solid rgba(255, 255, 255, 0.62);
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pricing-grid {
@@ -750,7 +753,7 @@ summary {
   }
 
   .section {
-    padding: 4rem 0;
+    padding: 120px 0;
   }
 
   main {
