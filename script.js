@@ -11,3 +11,16 @@ document.querySelectorAll('.site-nav a[href^="#"]').forEach((link) => {
     section.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+document.querySelectorAll('a[href*="wa.me/5491169047724"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    if (typeof window.fbq !== "function") {
+      return;
+    }
+
+    window.fbq("track", "Lead", {
+      content_name: "Taller online de limpieza chamanica",
+      lead_source: "whatsapp_landing",
+    });
+  });
+});
